@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppSetoranMahasiswa</string> <string name="login_title">Login</string>
+    <string name="setoran_mahasiswa_subtitle">Setoran Mahasiswa</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">LOGIN</string>
+    <string name="logo_description">Logo Aplikasi</string>
+</resources>
