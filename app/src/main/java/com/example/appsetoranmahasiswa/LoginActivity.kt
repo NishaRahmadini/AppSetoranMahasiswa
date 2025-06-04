@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var buttonLogin: Button
     private lateinit var progressBarLogin: ProgressBar
 
-    private val clientId = "/setoran-dev/v1"
+    val clientId = "setoran-mobile-dev"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +51,10 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val response = RetrofitInstance.authService.login(
                     clientId = clientId,
+                    clientSecret = "aqJp3xnXKudgC7RMOshEQP7ZoVKWzoSl",
                     username = username,
-                    password = password
+                    password = password,
+                    scope = "openid profile email"
                 )
 
                 showLoading(false)
@@ -62,6 +64,16 @@ class LoginActivity : AppCompatActivity() {
                     if (tokenResponse != null && tokenResponse.accessToken != null) {
                         Log.d("LoginActivity", "Access Token: ${tokenResponse.accessToken}")
                         Toast.makeText(this@LoginActivity, "Login Berhasil!", Toast.LENGTH_LONG).show()
+
+                        val sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+                        with(sharedPreferences.edit()) {
+                            putString("ACCESS_TOKEN", tokenResponse.accessToken)
+                            apply()
+                        }
+
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
 
                     } else if (tokenResponse != null && tokenResponse.error != null) {
                         Log.e("LoginActivity", "Error Keycloak: ${tokenResponse.error} - ${tokenResponse.errorDescription}")

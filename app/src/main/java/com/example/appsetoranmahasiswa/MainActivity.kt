@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toolbarMain: Toolbar
 
     // GANTI DENGAN API KEY ANDA YANG SEBENARNYA
-    private val apiKey = "API_KEY_ANDA_DISINI"
+    private val apiKey = "https://api.tif.uin-suska.ac.id/setoran-dev/v1/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
