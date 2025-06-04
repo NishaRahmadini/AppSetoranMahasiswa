@@ -8,20 +8,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    private const val KC_BASE_URL = "https://id.tif.uin-suska.ac.id/" // URL dasar Keycloak Anda
+    private const val KC_BASE_URL = "https://id.tif.uin-suska.ac.id/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY // Menampilkan body request dan response, berguna untuk debugging
+        level = HttpLoggingInterceptor.Level.BODY
     }
 
     private val client = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor) // Tambahkan interceptor logging
+        .addInterceptor(loggingInterceptor)
         .build()
 
     val authService: AuthService by lazy {
         Retrofit.Builder()
             .baseUrl(KC_BASE_URL)
-            .client(client) // Gunakan OkHttpClient yang sudah dikonfigurasi
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(AuthService::class.java)

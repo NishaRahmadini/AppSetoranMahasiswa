@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">AppSetoranMahasiswa</string> <string name="login_title">Login</string>
+    <string name="app_name">AppSetoranMahasiswa</string> <string name="nama_mahasiswa_placeholder">Nama Mahasiswa</string>
+    <string name="nim_mahasiswa_placeholder">NIM</string>
+    <string name="progres_setoran_title">Progres Setoran Keseluruhan:</string>
+    <string name="persentase_progres_placeholder">0% (0/0)</string>
+    <string name="terakhir_setor_placeholder">Terakhir setor: -</string>
+    <string name="download_rekap_pdf_button">Download Rekap PDF</string>
+    <string name="logout_button">Logout</string>
+    <string name="login_title">Login</string>
     <string name="setoran_mahasiswa_subtitle">Setoran Mahasiswa</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>

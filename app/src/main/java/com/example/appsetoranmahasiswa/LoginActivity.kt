@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var buttonLogin: Button
     private lateinit var progressBarLogin: ProgressBar
 
-    private val clientId = "nama_client_anda_di_keycloak"
+    private val clientId = "/setoran-dev/v1"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

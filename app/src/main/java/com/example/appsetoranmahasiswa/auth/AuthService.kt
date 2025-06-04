@@ -14,6 +14,5 @@ interface AuthService {
         @Field("username") username: String,
         @Field("password") password: String,
         @Field("grant_type") grantType: String = "password",
-
     ): Response<TokenResponse>
 }
